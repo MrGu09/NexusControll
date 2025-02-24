@@ -91,6 +91,17 @@
                             <button id="switchBtn">
                                 <i class="fa-solid fa-moon"></i>
                             </button>
+                            <button id="notifBtn">
+                                <i class="fa-solid fa-bell"></i>
+                                    <span id="notifBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">3</span>
+                            </button>
+                            <!-- Notification Dropdown -->
+                        <div id="notifDropdown" class="dropdown-menu dropdown-menu-end shadow ">
+                            <h6 class="dropdown-header">Notifications</h6>
+                            <div id="notifList" class="list-group">
+                                <p class="text-muted small text-center m-0">No new notifications</p>
+                            </div>
+                        </div>
                         </body>
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -157,6 +168,7 @@
             </div>
         </div>
     </div>
+    <script src="js/navigation.js"></script>
     <!-- Add this before closing </body> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </nav>
