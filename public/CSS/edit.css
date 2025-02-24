@@ -108,3 +108,7 @@ svg{
 #navtop > div > img{
     display: none;
 }
+
+#notifBtn{
+    display: none !important;
+}
