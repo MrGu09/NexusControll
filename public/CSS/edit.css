@@ -112,3 +112,12 @@ svg{
 #notifBtn{
     display: none !important;
 }
+
+.card {
+    border: none !important;
+}
+
+#card-body{
+    border: 3px solid gray;
+    margin-bottom: 15px;
+}

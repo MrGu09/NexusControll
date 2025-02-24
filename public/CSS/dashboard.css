@@ -848,7 +848,7 @@ body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div:nth-
 /* button /w image to pare*/
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div:nth-child(1) > button {
     border-radius: 10px;
-    background: #007BFF !important;
+    background: transparent !important;
     border: none !important;
     color: white; /* Ensure text is visible */
     padding: 5px 10px; /* Add padding for better appearance */
@@ -859,7 +859,7 @@ body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidd
 }
 
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div:nth-child(1) > button:hover {
-    background: #0055b1 !important;
+    background: none!important;
 }
 
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div.absolute.z-50.mt-2.w-48.rounded-md.shadow-lg.ltr\:origin-top-right.rtl\:origin-top-left.end-0 > div{

@@ -11,12 +11,13 @@
             <div class="mb-3 text-center">
                 <label for="profile_picture" class="form-label">Profile Picture</label>
                 <div>
-                    <img src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('/images/user.png') }}" 
+                    <img id="profile-preview" 
+                         src="{{ Auth::user()->profile_picture ? asset('storage/' . Auth::user()->profile_picture) : asset('/images/user.png') }}" 
                          class="rounded-circle mb-2" 
                          width="120" 
                          alt="User Image">
                 </div>
-                <input type="file" class="form-control" name="profile_picture" id="profile_picture">
+                <input type="file" class="form-control" name="profile_picture" id="profile_picture" accept="image/*">
                 @error('profile_picture') <small class="text-danger">{{ $message }}</small> @enderror
             </div>
 
