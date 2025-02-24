@@ -48,7 +48,17 @@ body.light h2{
     position: relative;
     top: 10px;
 }
-
+.profile-img {
+    position: relative;
+    z-index: 1; /* Keep it above the overlay */
+    border: 4px solid white; /* Optional border */
+    background-color: transparent;
+    width: 120px;   /* Fixed width */
+    height: 120px;  /* Fixed height */
+    left: -38px;
+    top: -17px;
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+}
 /* Sidebar Navigation */
 nav {
     position: fixed;
@@ -102,7 +112,7 @@ nav a {
 ul{
     font-size: 1.1em;
     position: relative;
-    top: 1vh;
+    top: 4vh;
     padding-left: 0;
 }
 
@@ -824,7 +834,7 @@ body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div:nth-
     font-size: 2.2em ;
 }
 
-/* button /w hover to */
+/* button /w image to pare*/
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div:nth-child(1) > button {
     border-radius: 10px;
     background: #007BFF !important;
@@ -833,6 +843,8 @@ body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidd
     padding: 5px 10px; /* Add padding for better appearance */
     transition: background 0.3s ease-in-out; /* Smooth transition */
     position: relative;
+    width: 70px;
+    height: 70px;
 }
 
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div:nth-child(1) > button:hover {
@@ -869,6 +881,9 @@ li::marker {
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div.absolute.z-50.mt-2.w-48.rounded-md.shadow-lg.origin-top-right.right-0 > div{    
     background-color: gray !important;
     border-radius: 10px !important;
+    margin-top: 50px;
+    position: relative;
+    top: 12px;
 }
 
 body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div.absolute.z-50.mt-2.w-48.rounded-md.shadow-lg.origin-top-right.right-0 > div >:hover{
@@ -876,6 +891,7 @@ body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidd
     background-color: rgb(153, 153, 153) !important;
 }
 
-/* body > div > nav > div.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8 > div > div.hidden.sm\:flex.sm\:items-center.sm\:ms-6 > div > div.absolute.z-50.mt-2.w-48.rounded-md.shadow-lg.origin-top-right.right-0 > div > form > a:hover{
-    background-color: rgb(153, 153, 153) !important;
-} */
+/* topNavbar profile picture */
+#navtop > div > img{
+    display: none !important;
+}

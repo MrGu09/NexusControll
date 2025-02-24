@@ -3,7 +3,7 @@
     
     <x-slot name="header">
         <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" id="nexus">
-                    {{ __('NexusControl') }}
+            {{ __('NexusControl') }}
         </x-nav-link>
     </x-slot>
 
@@ -16,11 +16,19 @@
                     <div class="card shadow-sm h-100 min-vh-50 d-flex flex-column profile-card">
                         <div class="overlay"></div> <!-- Dark overlay for readability -->
                         <div class="card-body text-center position-relative">
-                            <img src="{{ asset('/images/user.png') }}" class="rounded-circle mb-3 profile-img" width="120" alt="User Image">
+                            <!-- Display Profile Picture -->
+                            @if(Auth::user()->profile_picture)
+                                <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}" 
+                                     class="rounded-circle mb-3 profile-img" width="120" alt="User Image">
+                            @else
+                                <img src="{{ asset('images/user.png') }}" 
+                                     class="rounded-circle mb-3 profile-img" width="120" alt="User Image">
+                            @endif
+                            
                             <h5 class="card-title text-white">{{ Auth::user()->name }}</h5>
                             <p class="text-light">NexusControl Inc. Admin<br>Langaray Area, Barangay 14, Caloocan</p>
                             <div class="mt-auto">
-                            <p class="text-light">{{ Auth::user()->email }}</p>
+                                <p class="text-light">{{ Auth::user()->email }}</p>
                             </div>
                         </div>
                     </div>
@@ -28,9 +36,8 @@
 
                 <!-- Profile Info, Update Password, Delete Account (Side by Side) -->
                 <div class="col-md-4">
-                    <div class="card  h-100 min-vh-50 d-flex flex-column">
+                    <div class="card h-100 min-vh-50 d-flex flex-column">
                         <div class="card-body h-100 d-flex flex-column">
-                            <!-- <h5 class="card-title">Profile Information</h5> -->
                             <div class="flex-grow-1">
                                 @include('profile.partials.update-profile-information-form')
                             </div>
@@ -39,9 +46,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card  h-100 min-vh-50 d-flex flex-column">
+                    <div class="card h-100 min-vh-50 d-flex flex-column">
                         <div class="card-body h-100 d-flex flex-column">
-                            <!-- <h5 class="card-title">Update Password</h5> -->
                             <div class="flex-grow-1">
                                 @include('profile.partials.update-password-form')
                             </div>
@@ -50,9 +56,8 @@
                 </div>
 
                 <div class="col-md-4">
-                    <div class="card  h-100 min-vh-50 d-flex flex-column">
+                    <div class="card h-100 min-vh-50 d-flex flex-column">
                         <div class="card-body h-100 d-flex flex-column">
-                            <!-- <h5 class="card-title">Delete Account</h5> -->
                             <div class="flex-grow-1">
                                 @include('profile.partials.delete-user-form')
                             </div>
