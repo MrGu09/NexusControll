@@ -65,6 +65,39 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", updateNavVisibility);
     updateNavVisibility();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const selectAllBtn = document.getElementById("selectAll");
+    const section = document.getElementById("control-section");
+
+    if (!selectAllBtn || !section) {
+        console.error("Elements not found.");
+        return;
+    }
+
+    selectAllBtn.addEventListener("click", function () {
+        console.log("Select All clicked!");
+
+        const items = section.querySelectorAll(".pc-item");
+
+        if (items.length === 0) {
+            console.error("No .pc-item elements found.");
+            return;
+        }
+
+        // Check if all items are already selected
+        let allSelected = [...items].every(item => item.classList.contains("selected"));
+
+        // Toggle selection
+        items.forEach(item => {
+            if (!allSelected) {
+                item.classList.add("selected");
+                item.click(); // Simulate click
+            } else {
+                item.classList.remove("selected");
+            }
+        });
+    });
+});
 
 
 

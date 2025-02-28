@@ -89,6 +89,8 @@
     <!-- Control Section -->
 <div class="control-container max-w-7xl mx-auto sm:px-6 lg:px-8 mt-10" id="control-section">
     <h2 class="text-xl font-semibold mb-4">Controls</h2>
+        <button id="selectAll"><i class="fa-solid fa-check"></i></button>
+
     <div class="pc-grid">
         @foreach(range(1, 10) as $i)
         <div class="pc-item">

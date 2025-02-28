@@ -39,6 +39,38 @@ body.light h2{
     color: black;
 }
 
+#selectAll {
+    background-color: #777777; /* Blue */
+    color: white;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -60px;
+    left: 150px;
+}
+
+#selectAll:hover {
+    background-color: #c0c0c0; /* Darker Blue */
+    transform: scale(1.05);
+}
+
+#selectAll i {
+    font-size: 18px;
+}
+
+#control-section .pc-grid {
+    position: relative;
+    top: -40px;
+}
+
+
 #switchBtn{
     background: #939da8 !important;
     border-radius: 10px;

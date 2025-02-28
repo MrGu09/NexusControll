@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const notifBadge = document.getElementById("notifBadge");
 
     let notifications = [
-        "New comment on your post",
-        "You have a new follower",
-        "Reminder: Meeting at 3 PM"
+        "PC 3 Shuts down",
+        "PC 1 Starts up",
+        "PC 2 File Transferred"
     ];
 
     if (notifications.length > 0) {
