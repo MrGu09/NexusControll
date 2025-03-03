@@ -48,11 +48,14 @@
     <!-- Main Content with Background -->
     <div class="background-container">
         <div class="overlay"></div> <!-- Optional for dark overlay -->
-            <div class="welcome text-center">
-                <h1 class="display-4 fw-bold">Welcome to NexusControl</h1>
-                <p class="text-light mt-2">Efficient LAN-Based PC Monitoring and Control System</p>
-                <a href="#" class="btn btn-light mt-4 px-4 py-2">Get Started</a>
-            </div>
+        <div class="welcome text-center">
+            <h1 class="display-4 fw-bold">Welcome to NexusControl</h1>
+            <p class="text-light mt-2">Efficient LAN-Based PC Monitoring and Control System</p>
+
+            <!-- Updated Button Here -->
+            <a href="{{ route('login') }}" class="btn homeBtn">
+                <span>Sign in now</span><span>Get Started</span>
+            </a>
         </div>
     </div>
 
@@ -62,14 +65,14 @@
     <div class="container">
         <!-- Slider Start -->
             <ul class='slider'>
-                <li class='item' style="background-image: url('/images/file-handling.jpg')">
+                <li class='item' style="background-image: url('/images/file-handling.jpeg')">
                     <div class='content'>
                         <h2 class='title'>File handling</h2>
                         <p class='description'>Download & Upload File Control.</p>
                         <button>Read More</button>
                     </div>
                 </li>
-                <li class='item' style="background-image: url('/images/computers.jpg')">
+                <li class='item' style="background-image: url('/images/computer1.jpg')">
                     <div class='content'>
                         <h2 class='title'>Features</h2>
                         <p class='description'>Powerful tools to monitor and manage LAN-connected PCs.</p>
@@ -97,7 +100,7 @@
                         <button>Read More</button>
                     </div>
                 </li>
-                <li class='item' style="background-image: url('/images/lock.jpg')">
+                <li class='item' style="background-image: url('/images/lock (2).jpg')">
                     <div class='content'>
                         <h2 class='title'>PC locking</h2>
                         <p class='description'>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
@@ -120,12 +123,72 @@
 
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="fw-bold">About Us</h2>
-            <p>Learn more about our mission to provide efficient PC monitoring.</p>
+<section id="about" class="parallax-section">
+    <div class="container text-white text-center">
+        <h2 class="fw-bold">About Us</h2>
+        <p>Learn more about our mission to provide efficient PC monitoring.</p>
+    </div>
+</section>
+
+<!-- Second part (Profiles) -->
+<section id="team" class="team-section">
+    <div class="team-container">
+        <h2>Meet Our Team</h2>
+        <div class="row">
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/COLENDRES.jpg" class="circle" alt="Sherwin">
+                    <h3>Sherwin Colendres</h3>
+                    <p>Main Programmer</p>
+                </div>
+            </div>
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/BARCELON.jpg" class="circle" alt="Justine">
+                    <h3>Justine Benedict Barcelon</h3>
+                    <p>Frontend Developer</p>
+                </div>
+            </div>
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/VERGARA.jpg" class="circle" alt="Kurt">
+                    <h3>Kurt Vergara</h3>
+                    <p>Backend Developer</p>
+                </div>
+            </div>
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/SIWA.jpg" class="circle" alt="Jason">
+                    <h3>Jason Siwa</h3>
+                    <p>Programmer</p>
+                </div>
+            </div>
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/RAMIREZ.jpg" class="circle" alt="Clarence">
+                    <h3>Clarence Ramirez </h3>
+                    <p>UX</p>
+                </div>
+            </div>
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/PUNLA.jpg" class="circle" alt="Joyce">
+                    <h3>Joyce Ann Punla</h3>
+                    <p>Documentator/UX</p>
+                </div>
+            </div>
+            <div class="col-md-4 person">
+                <div class="container-inner">
+                    <img src="/images/GAB.jpg" class="circle" alt="Gab">
+                    <h3>Gabriel Domingo</h3>
+                    <p>Member</p>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -134,6 +197,33 @@
             <p>Get in touch with our team for support and inquiries.</p>
         </div>
     </section>
+
+<footer class="glass-container">
+    <div class="morph-container d-flex justify-content-between align-items-center">
+        <!-- Social Media Icons -->
+        <div class="d-flex align-items-center">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="/images/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="/images/linkedin.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="/images/twitter.png" alt="Twitter" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="/images/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.github.com" target="_blank">
+                <img src="/images/github.png" alt="GitHub" class="social-icon">
+            </a>
+        </div>
+
+        <!-- Address -->
+        <p class="footer-text">NEXUSCONTROL INC. HQ LANGARAY ST., BRGY 14, CALOOCAN CITY, PHILIPPINES.</p>
+    </div>
+</footer>
+
 
     
     <script src="js/welcome.js"></script>

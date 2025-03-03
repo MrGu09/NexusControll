@@ -28,6 +28,12 @@
                         <x-text-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
                         <x-input-error :messages="$errors->get('password')" class="text-danger small" />
                     </div>
+                    
+                      <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+
+                        @error('g-recaptcha-response')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
 
                     <!-- Remember Me -->
                     <div class="mb-3 form-check">
@@ -96,4 +102,6 @@
             this.setAttribute('aria-hidden', 'true');
         });
     </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </x-guest-layout>

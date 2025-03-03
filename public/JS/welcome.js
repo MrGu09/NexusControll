@@ -58,4 +58,14 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
+document.addEventListener("scroll", function () {
+    const teamSection = document.getElementById("team");
+    const teamRect = teamSection.getBoundingClientRect();
+
+    if (teamRect.top < window.innerHeight - 100) {
+        teamSection.classList.add("show");
+    }
+});
+
+
 
