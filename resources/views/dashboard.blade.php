@@ -86,10 +86,37 @@
         </div>
     </div>
 
-    <!-- Control Section -->
+   <!-- Include WebSocket client -->
+<script>
+    const ws = new WebSocket("ws://192.168.1.13:3000"); // Change 'your-server-ip' to the actual IP
+
+    ws.onopen = () => {
+        console.log("Connected to WebSocket server");
+    };
+
+    ws.onmessage = (event) => {
+        console.log("Server response:", event.data);
+    };
+
+    ws.onclose = () => {
+        console.log("WebSocket disconnected");
+    };
+
+    function sendCommand(pcName, command) {
+        if (ws.readyState === WebSocket.OPEN) {
+            const data = JSON.stringify({ pc: pcName, command: command });
+            ws.send(data);
+            alert(`Sent ${command} command to ${pcName}`);
+        } else {
+            alert("WebSocket is not connected");
+        }
+    }
+</script>
+
+<!-- Control Section -->
 <div class="control-container max-w-7xl mx-auto sm:px-6 lg:px-8 mt-10" id="control-section">
     <h2 class="text-xl font-semibold mb-4">Controls</h2>
-        <button id="selectAll"><i class="fa-solid fa-check"></i></button>
+    <button id="selectAll"><i class="fa-solid fa-check"></i></button>
 
     <div class="pc-grid">
         @foreach(range(1, 10) as $i)
@@ -99,17 +126,28 @@
                 <p>PC Name: PC {{ $i }}</p>
                 <p>Status: Online</p>
             </div>
-            <div class="pc-controls" style="none">
-                <button class="shutdown" title="Shutdown"><i class="fas fa-power-off"></i></button>
-                <button class="restart" title="Restart"><i class="fas fa-sync-alt"></i></button>
-                <button class="startup" title="Startup"><i class="fas fa-play"></i></button>
-                <button class="file-transfer" title="File Transfer"><i class="fas fa-file-upload"></i></button>
-                <button class="adv-opt" title="Advanced Options"><i class="fas fa-toolbox"></i></button>
+            <div class="pc-controls">
+                <button class="shutdown" title="Shutdown" onclick="sendCommand('PC{{ $i }}', 'shutdown')">
+                    <i class="fas fa-power-off"></i>
+                </button>
+                <button class="restart" title="Restart" onclick="sendCommand('PC{{ $i }}', 'restart')">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+                <button class="lock" title="Lock" onclick="sendCommand('PC{{ $i }}', 'lock')">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="file-transfer" title="File Transfer" onclick="sendCommand('PC{{ $i }}', 'file-transfer')">
+                    <i class="fas fa-file-upload"></i>
+                </button>
+                <button class="adv-opt" title="Advanced Options" onclick="sendCommand('PC{{ $i }}', 'advanced-options')">
+                    <i class="fas fa-toolbox"></i>
+                </button>
             </div>
         </div>
         @endforeach
     </div>
 </div>
+
 
 <!-- Small Modal for Advanced Options -->
 <div class="modal fade" id="advOptionsModal" tabindex="-1" aria-labelledby="advOptionsLabel" aria-hidden="true">

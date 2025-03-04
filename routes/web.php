@@ -16,6 +16,8 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::post('/send-command', [PCController::class, 'sendCommand']);
+
 Route::get('/', function () {
     return view('welcome');
 });
